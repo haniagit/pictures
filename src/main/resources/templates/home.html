@@ -46,11 +46,28 @@
     <div class="gifs container">
         <div class="row">
            <h1>Miejsce na wyświetlenie gifów:)</h1>
+
+
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nazwa</th>
+        </tr>
+        </thead>
+        <tr th:each="gif : ${gifs}">
+            <td th:text="${gif.id}"></td>
+            <td th:text="${gif.name}"></td>
+        </tr>
+    </table>
+
         </div>
     </div>
 
 <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
 <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
 <script th:src="@{/app.js}"></script>
+
 </body>
 </html>
