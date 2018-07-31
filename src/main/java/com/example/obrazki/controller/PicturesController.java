@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
 @Controller
 public class PicturesController {
 
@@ -22,5 +23,14 @@ public class PicturesController {
     public String showFav(ModelMap modelMap){
         modelMap.put("fav", gifDao.favorites());
         return"favorites";
+    }
+
+    @GetMapping("/show")
+    public String search(ModelMap modelMap, String q){
+        modelMap.put("gifs", gifDao.searchGif(q));
+        if (gifDao.searchGif(q).size() == 0){
+            modelMap.put("message", "Nic nie znaleziono");
+        }
+        return "home";
     }
 }

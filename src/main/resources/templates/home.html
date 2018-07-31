@@ -34,16 +34,21 @@
     <div class="search-bar container">
         <div class="row">
             <div class="col s12">
-                <form action="#" method="get">
+
+                <form th:action="@{/show}" method="get">
                     <div class="input-field">
                         <input name="q" type="search" placeholder="Wyszukiwanie..." required="required" autocomplete="off"/>
-                        <i class="material-icons">search</i>
+                        <i class="material-icons" button="submit">search</i>
                     </div>
                 </form>
+
+                <p th:if="${message}" th:text="${message}" align="center"></p>
+
             </div>
         </div>
     </div>
 
+    <!--<a th:href="@{/home/{id}(id=${gif.id})}"-->
 
     <div class="gifs container">
         <div class="row">
@@ -53,6 +58,10 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>Hania & Paweł</p>
+    </footer>
 
 
 

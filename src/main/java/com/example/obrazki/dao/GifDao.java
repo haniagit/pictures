@@ -10,8 +10,7 @@ public interface GifDao {
 
     public List<Gif> favorites ();
 
-
-
+    public List<Gif> searchGif(String gifName);
 
 
 }
