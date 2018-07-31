@@ -47,20 +47,8 @@
         <div class="row">
            <h1>Miejsce na wyświetlenie gifów:)</h1>
 
-
-
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nazwa</th>
-        </tr>
-        </thead>
-        <tr th:each="gif : ${gifs}">
-            <td th:text="${gif.id}"></td>
-            <td th:text="${gif.name}"></td>
-        </tr>
-    </table>
+        <p th:each="gif : ${gifs}">
+            <img th:src="${gif.path}"/>
 
         </div>
     </div>

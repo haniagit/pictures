@@ -7,19 +7,34 @@ import java.util.List;
 
 public class Gif implements GifDao {
 
-    private static int id;
+    private Integer id;
     private String name;
-    private List<Gif> gifs = new ArrayList<>();
+    private static List<Gif> gifs = new ArrayList<>();
 
-    public Gif(String name) {
+
+
+
+    public Gif(Integer id,String name) {
         this.id = id;
         this.name = name;
-        gifs.add(this);
     }
+
+    public Gif() {
+    }
+
+    public String getPath() {
+        return "gifs/" + getName() + ".gif";
+    }
+
 
     @Override
     public List<Gif> findAll() {
-        gifs.add(new Gif( "static/gifs/android-explosion.gif"));
+        gifs.add(new Gif(1, "android-explosion"));
+        gifs.add(new Gif(2, "ben-and-mike"));
+        gifs.add(new Gif(3, "book-dominos"));
+        gifs.add(new Gif(4, "compiler-bot"));
+        gifs.add(new Gif(5, "cowboy-coder"));
+        gifs.add(new Gif(6, "infinite-andrew"));
         return gifs;
     }
 
@@ -31,11 +46,11 @@ public class Gif implements GifDao {
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

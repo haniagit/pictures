@@ -2,6 +2,7 @@ package com.example.obrazki.controller;
 
 
 import com.example.obrazki.dao.GifDao;
+import com.example.obrazki.model.Gif;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,15 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PicturesController {
 
-    private GifDao gifDao;
+    private GifDao gifDao = new Gif();
 
     @GetMapping("/")
-    public String home(){
-        return "home";
-    }
-
-    @GetMapping("/home")
-    public String findAll(ModelMap modelMap){
+    public String home(ModelMap modelMap){
         modelMap.put("gifs", gifDao.findAll());
         return "home";
     }
