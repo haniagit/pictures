@@ -43,13 +43,15 @@
             </div>
         </div>
     </div>
+
     <div class="gifs container">
         <div class="row">
-           <h1>Miejsce na wyświetlenie gifów:)</h1>
+            <div th:each="gif : ${gifs}" class="col s12 l4">
+                <img th:src="${gif.path}"/>
+                </a>
+            </div>
         </div>
     </div>
-        <p align="center" th:each="gif : ${gifs}">
-            <img th:src="${gif.path}"/>
 
 
 
