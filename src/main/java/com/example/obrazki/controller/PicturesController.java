@@ -1,7 +1,7 @@
 package com.example.obrazki.controller;
 
 
-import com.example.obrazki.dao.GifDao;
+import com.example.obrazki.Dao.GifDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;

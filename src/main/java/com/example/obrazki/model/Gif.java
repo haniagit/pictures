@@ -1,6 +1,6 @@
 package com.example.obrazki.model;
 
-import com.example.obrazki.dao.GifDao;
+import com.example.obrazki.Dao.GifDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,10 @@ public class Gif implements GifDao {
     private static int id;
     private String name;
     private List<Gif> gifs = new ArrayList<>();
+
+    public String getPath(){
+        return "gifs/"+getName()+".gif";
+    }
 
     public Gif(String name) {
         this.id = id;
@@ -21,6 +25,11 @@ public class Gif implements GifDao {
     public List<Gif> findAll() {
         gifs.add(new Gif( "static/gifs/android-explosion.gif"));
         return gifs;
+    }
+
+    @Override
+    public List<Gif> favorites() {
+        return null;
     }
 
     public String getName() {
