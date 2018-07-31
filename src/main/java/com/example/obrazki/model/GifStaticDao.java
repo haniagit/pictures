@@ -34,4 +34,15 @@ public class GifStaticDao implements GifDao {
         }
         return favGifs;
     }
+
+    @Override
+    public List<Gif> searchGif(String gifName) {
+        List<Gif> neededGifs = new ArrayList<>();
+        for(Gif gif: gifs){
+            if(gif.getName().contains(gifName)){
+                neededGifs.add(gif);
+            }
+        }
+        return neededGifs;
+    }
 }
