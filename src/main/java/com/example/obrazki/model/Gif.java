@@ -39,10 +39,10 @@ public class Gif implements GifDao {
 
     @Override
     public List<Gif> findAll() {
-        gifs.add(new Gif(1, "android-explosion", true));
-        gifs.add(new Gif(2, "ben-and-mike", false));
-        gifs.add(new Gif(3, "book-dominos", true));
-        gifs.add(new Gif(4, "compiler-bot", true));
+        gifs.add(new Gif(1, "android-explosion", false));
+        gifs.add(new Gif(2, "ben-and-mike", true));
+        gifs.add(new Gif(3, "book-dominos", false));
+        gifs.add(new Gif(4, "compiler-bot", false));
         gifs.add(new Gif(5, "cowboy-coder", false));
         gifs.add(new Gif(6, "infinite-andrew", true));
         return gifs;
