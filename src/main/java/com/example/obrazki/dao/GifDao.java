@@ -1,4 +1,4 @@
-package com.example.obrazki.Dao;
+package com.example.obrazki.dao;
 
 import com.example.obrazki.model.Gif;
 

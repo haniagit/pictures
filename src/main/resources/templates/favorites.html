@@ -43,14 +43,17 @@
             </div>
         </div>
     </div>
+
+
     <div class="gifs container">
         <div class="row">
-            <h1>Miejsce na wyświetlanie gifów:)</h1>
+            <div th:each="gif : ${fav}" class="col s12 l4">
+                <img th:src="${gif.path}"/>
+                </a>
+            </div>
         </div>
     </div>
 
-    <p align="center" th:each="gif : ${fav}">
-        <img th:src="${gif.path}"/>
 
 <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
 <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
