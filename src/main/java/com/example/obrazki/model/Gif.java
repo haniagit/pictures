@@ -1,6 +1,7 @@
 package com.example.obrazki.model;
 
-import com.example.obrazki.dao.GifDao;
+import com.example.obrazki.Dao.GifDao;
+import sun.plugin.javascript.navig.LinkArray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +11,21 @@ public class Gif implements GifDao {
     private Integer id;
     private String name;
     private static List<Gif> gifs = new ArrayList<>();
+    private  boolean isFavorite;
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
 
 
-    public Gif(Integer id,String name) {
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
+
+    public Gif(Integer id, String name, boolean isFavorite) {
         this.id = id;
         this.name = name;
+        this.isFavorite = isFavorite;
     }
 
     public Gif() {
@@ -27,14 +38,28 @@ public class Gif implements GifDao {
 
     @Override
     public List<Gif> findAll() {
-        gifs.add(new Gif(1, "android-explosion"));
-        gifs.add(new Gif(2, "ben-and-mike"));
-        gifs.add(new Gif(3, "book-dominos"));
-        gifs.add(new Gif(4, "compiler-bot"));
-        gifs.add(new Gif(5, "cowboy-coder"));
-        gifs.add(new Gif(6, "infinite-andrew"));
+        gifs.add(new Gif(1, "android-explosion", true));
+        gifs.add(new Gif(2, "ben-and-mike", false));
+        gifs.add(new Gif(3, "book-dominos", true));
+        gifs.add(new Gif(4, "compiler-bot", true));
+        gifs.add(new Gif(5, "cowboy-coder", false));
+        gifs.add(new Gif(6, "infinite-andrew", true));
         return gifs;
     }
+
+    @Override
+    public List<Gif> favorites() {
+        List<Gif> favGifs = new ArrayList<>();
+
+        for (int i = 0; i < gifs.size(); i++) {
+            if (gifs.get(i).isFavorite) {
+                favGifs.add(gifs.get(i));
+            }
+        }
+
+        return favGifs;
+    }
+
 
     public String getName() {
         return name;
@@ -59,6 +84,5 @@ public class Gif implements GifDao {
     public void setGifs(List<Gif> gifs) {
         this.gifs = gifs;
     }
-
 
 }

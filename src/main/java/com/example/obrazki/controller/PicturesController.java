@@ -1,7 +1,9 @@
 package com.example.obrazki.controller;
 
 
-import com.example.obrazki.dao.GifDao;
+import com.example.obrazki.Dao.GifDao;
+
+
 import com.example.obrazki.model.Gif;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

@@ -46,9 +46,16 @@
     <div class="gifs container">
         <div class="row">
            <h1>Miejsce na wyświetlenie gifów:)</h1>
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1ff1563624aa779db48f472bea80659c4c61eb6
         </div>
     </div>
+        <p align="center" th:each="gif : ${gifs}">
+            <img th:src="${gif.path}"/>
+
+
 
         <p align="center" th:each="gif : ${gifs}">
             <img th:src="${gif.path}"/>
