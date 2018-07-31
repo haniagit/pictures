@@ -19,4 +19,10 @@ public class PicturesController {
         modelMap.put("gifs", gifDao.findAll());
         return "home";
     }
+
+    @GetMapping("/favorites")
+    public String showFav(ModelMap modelMap){
+        modelMap.put("fav", gifDao.favorites());
+        return"favorites";
+    }
 }
