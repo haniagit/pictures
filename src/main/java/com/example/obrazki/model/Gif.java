@@ -12,8 +12,6 @@ public class Gif implements GifDao {
     private static List<Gif> gifs = new ArrayList<>();
 
 
-
-
     public Gif(Integer id,String name) {
         this.id = id;
         this.name = name;
