@@ -13,12 +13,7 @@ public interface GifDao {
 
     public List<Gif> searchGif(String gifName);
 
-    public List<Category> findAllCat();
-
     public List<Gif> findById(int id);
-
-    public Category findCatById(int id);
-
 
 }
 

@@ -1,6 +1,8 @@
 package com.example.obrazki.controller;
 
 
+import com.example.obrazki.dao.CategoryDao;
+import com.example.obrazki.dao.CategoryStaticDao;
 import com.example.obrazki.dao.GifDao;
 import com.example.obrazki.dao.GifStaticDao;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class PicturesController {
 
     private GifDao gifDao = new GifStaticDao();
+    private CategoryDao categoryDao = new CategoryStaticDao();
 
     @GetMapping("/")
     public String home(ModelMap modelMap){
@@ -37,14 +40,14 @@ public class PicturesController {
 
     @GetMapping("/categories")
     public String showCategories(ModelMap modelMap){
-        modelMap.put("categories", gifDao.findAllCat());
+        modelMap.put("categories", categoryDao.findAll());
         return "categories";
     }
 
     @GetMapping("/category/{id}")
     public String getGifsByCategory(@PathVariable Integer id, ModelMap modelMap){
         modelMap.put("gifs", gifDao.findById(id));
-        modelMap.put("category", gifDao.findCatById(id));
+        modelMap.put("category", categoryDao.findCatById(id));
         return "category";
     }
 
