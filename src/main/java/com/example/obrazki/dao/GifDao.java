@@ -1,5 +1,6 @@
 package com.example.obrazki.dao;
 
+import com.example.obrazki.model.Category;
 import com.example.obrazki.model.Gif;
 
 import java.util.List;
@@ -11,6 +12,8 @@ public interface GifDao {
     public List<Gif> favorites ();
 
     public List<Gif> searchGif(String gifName);
+
+    public List<Category> findAllCat();
 
 
 }

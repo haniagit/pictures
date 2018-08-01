@@ -41,7 +41,6 @@
                         <i class="material-icons" button="submit">search</i>
                     </div>
                 </form>
-
                 <p th:if="${message}" th:text="${message}" align="center"></p>
 
             </div>
@@ -53,7 +52,7 @@
     <div class="gifs container">
         <div class="row">
             <div th:each="gif : ${gifs}" class="col s12 l4">
-                <img th:src="${gif.path}"/>
+                <a href=""><img th:src="${gif.path}"/>
                 </a>
             </div>
         </div>

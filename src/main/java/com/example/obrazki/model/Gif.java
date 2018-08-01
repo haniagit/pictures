@@ -7,15 +7,15 @@ public class Gif {
 
     private Integer id;
     private String name;
-    private static List<Gif> gifs = new ArrayList<>();
     private  boolean isFavorite;
+    private Category category;
 
 
-
-    public Gif(Integer id, String name, boolean isFavorite) {
+    public Gif(Integer id, String name, boolean isFavorite, Category category) {
         this.id = id;
         this.name = name;
         this.isFavorite = isFavorite;
+        this.category = category;
     }
 
     public Gif() {
@@ -42,13 +42,6 @@ public class Gif {
         this.id = id;
     }
 
-    public List<Gif> getGifs() {
-        return gifs;
-    }
-
-    public void setGifs(List<Gif> gifs) {
-        this.gifs = gifs;
-    }
 
     public boolean isFavorite() {
         return isFavorite;
@@ -58,4 +51,11 @@ public class Gif {
         isFavorite = favorite;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }

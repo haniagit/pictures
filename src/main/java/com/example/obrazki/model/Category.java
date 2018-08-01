@@ -7,11 +7,6 @@ public class Category {
 
     private Integer id;
     private String name;
-    private static List<Category> categories = new ArrayList<>();
-
-
-
-
 
     public Category(Integer id, String name) {
         this.id = id;
@@ -34,13 +29,4 @@ public class Category {
         this.name = name;
     }
 
-    public static List<Category> getCategories() {
-        return categories;
-    }
-
-    public static void setCategories(List<Category> categories) {
-        Category.categories = categories;
-    }
-
-
-}
+ }
