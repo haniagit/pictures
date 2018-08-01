@@ -5,6 +5,7 @@ import com.example.obrazki.dao.CategoryDao;
 import com.example.obrazki.dao.CategoryStaticDao;
 import com.example.obrazki.dao.GifDao;
 import com.example.obrazki.dao.GifStaticDao;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,12 @@ public class PicturesController {
     public String home(ModelMap modelMap){
         modelMap.put("gifs", gifDao.findAll());
         return "home";
+    }
+
+    @GetMapping("/gif-details/{id}")
+    public String showGif(@PathVariable Integer id, ModelMap modelMap){
+        modelMap.put("gif", gifDao.findById(id));
+        return "gif-details";
     }
 
     @GetMapping("/favorites")

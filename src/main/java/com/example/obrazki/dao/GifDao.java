@@ -13,7 +13,7 @@ public interface GifDao {
 
     public List<Gif> searchGif(String gifName);
 
-    public List<Gif> findById(int id);
+    public Gif findById(int id);
 
 }
 
