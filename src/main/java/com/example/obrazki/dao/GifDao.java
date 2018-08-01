@@ -15,6 +15,10 @@ public interface GifDao {
 
     public List<Category> findAllCat();
 
+    public List<Gif> findById(int id);
+
+    public Category findCatById(int id);
+
 
 }
 

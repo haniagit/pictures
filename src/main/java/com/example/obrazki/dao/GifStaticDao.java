@@ -27,37 +27,63 @@ public class GifStaticDao implements GifDao {
         gifs.add(new Gif(6, "infinite-andrew", true, funny));
     }
 
-
-    @Override
-    public List<Gif> findAll() {
-        return gifs;
-    }
-
-    @Override
-    public List<Gif> favorites() {
-        List<Gif> favGifs = new ArrayList<>();
-
-        for (int i = 0; i < gifs.size(); i++) {
-            if (gifs.get(i).isFavorite()) {
-                favGifs.add(gifs.get(i));
-            }
-        }
-        return favGifs;
-    }
-
-    @Override
-    public List<Gif> searchGif(String gifName) {
+    public List<Gif> findById(int id) {
         List<Gif> neededGifs = new ArrayList<>();
-        for(Gif gif: gifs){
-            if(gif.getName().contains(gifName)){
+        for(Gif gif:gifs){
+            if(gif.getCategory().getId() == id){
                 neededGifs.add(gif);
             }
         }
         return neededGifs;
     }
 
-    @Override
-    public List<Category> findAllCat() {
-        return categories;
+
+        @Override
+        public List<Gif> findAll () {
+            return gifs;
+        }
+
+        @Override
+        public List<Gif> favorites () {
+            List<Gif> favGifs = new ArrayList<>();
+
+            for (int i = 0; i < gifs.size(); i++) {
+                if (gifs.get(i).isFavorite()) {
+                    favGifs.add(gifs.get(i));
+                }
+            }
+            return favGifs;
+        }
+
+        @Override
+        public List<Gif> searchGif (String gifName){
+            List<Gif> neededGifs = new ArrayList<>();
+            for (Gif gif : gifs) {
+                if (gif.getName().contains(gifName)) {
+                    neededGifs.add(gif);
+                }
+            }
+            return neededGifs;
+        }
+
+        @Override
+        public Category findCatById ( int id){
+            for (Category category : categories) {
+                if (category.getId() == 1) {
+                    return category;
+                }
+                if (category.getId() == 2) {
+                    return category;
+                }
+                if (category.getId() == 3) {
+                    return category;
+                }
+            }
+            return null;
+        }
+
+        @Override
+        public List<Category> findAllCat () {
+            return categories;
+        }
     }
-}
