@@ -9,13 +9,15 @@ public class Gif {
     private String name;
     private  boolean isFavorite;
     private Category category;
+    private String userName;
 
 
-    public Gif(Integer id, String name, boolean isFavorite, Category category) {
+    public Gif(Integer id, String name, boolean isFavorite, Category category, String userName) {
         this.id = id;
         this.name = name;
         this.isFavorite = isFavorite;
         this.category = category;
+        this.userName = userName;
     }
 
     public Gif() {
@@ -57,5 +59,13 @@ public class Gif {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

@@ -2,7 +2,9 @@ package com.example.obrazki.controller;
 
 
 
+import com.example.obrazki.dao.CategoryStaticDao;
 import com.example.obrazki.dao.GifStaticDao;
+import com.example.obrazki.model.Category;
 import com.example.obrazki.model.Gif;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,5 +19,11 @@ public class ApiController {
     public Iterable<Gif> all(){
         GifStaticDao gifStaticDao = new GifStaticDao();
         return gifStaticDao.findAll();
+    }
+
+    @GetMapping("/categories")
+    public Iterable<Category> allCategories(){
+        CategoryStaticDao categoryStaticDao = new CategoryStaticDao();
+        return categoryStaticDao.findAll();
     }
 }

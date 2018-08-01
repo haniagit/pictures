@@ -14,12 +14,12 @@ public class GifStaticDao implements GifDao {
     static {
         CategoryStaticDao categoryStaticDao = new CategoryStaticDao();
 
-        gifs.add(new Gif(1, "android-explosion", false, categoryStaticDao.findAll().get(0)));
-        gifs.add(new Gif(2, "ben-and-mike", true, categoryStaticDao.findAll().get(1)));
-        gifs.add(new Gif(3, "book-dominos", false, categoryStaticDao.findAll().get(2)));
-        gifs.add(new Gif(4, "compiler-bot", true, categoryStaticDao.findAll().get(0)));
-        gifs.add(new Gif(5, "cowboy-coder", false, categoryStaticDao.findAll().get(2)));
-        gifs.add(new Gif(6, "infinite-andrew", true, categoryStaticDao.findAll().get(1)));
+        gifs.add(new Gif(1, "android-explosion", false, categoryStaticDao.findAll().get(0), "Piotr"));
+        gifs.add(new Gif(2, "ben-and-mike", true, categoryStaticDao.findAll().get(1),"Zuzia"));
+        gifs.add(new Gif(3, "book-dominos", false, categoryStaticDao.findAll().get(2),"Filip"));
+        gifs.add(new Gif(4, "compiler-bot", true, categoryStaticDao.findAll().get(0),"Karolina"));
+        gifs.add(new Gif(5, "cowboy-coder", false, categoryStaticDao.findAll().get(2),"Malwina"));
+        gifs.add(new Gif(6, "infinite-andrew", true, categoryStaticDao.findAll().get(1),"Tomasz"));
     }
 
     public Gif findById(int id) {
@@ -53,7 +53,7 @@ public class GifStaticDao implements GifDao {
     public List<Gif> searchGif(String gifName) {
         List<Gif> neededGifs = new ArrayList<>();
         for (Gif gif : gifs) {
-            if (gif.getName().contains(gifName)) {
+            if (gif.getName().contains(gifName) || gif.getCategory().getName().contains(gifName)) {
                 neededGifs.add(gif);
             }
         }
