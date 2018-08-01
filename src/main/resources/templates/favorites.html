@@ -20,7 +20,7 @@
     <div class="gifs container">
         <div class="row">
             <div th:each="gif : ${fav}" class="col s12 l4">
-                <img th:src="${gif.path}"/>
+                <a th:href="@{'/gif-details/' + ${gif.id}}"><img th:src="${gif.path}"/>
                 </a>
             </div>
         </div>

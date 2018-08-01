@@ -32,32 +32,43 @@ public class GifStaticDao implements GifDao {
     }
 
 
-        @Override
-        public List<Gif> findAll () {
-            return gifs;
-        }
-
-        @Override
-        public List<Gif> favorites () {
-            List<Gif> favGifs = new ArrayList<>();
-
-            for (int i = 0; i < gifs.size(); i++) {
-                if (gifs.get(i).isFavorite()) {
-                    favGifs.add(gifs.get(i));
-                }
-            }
-            return favGifs;
-        }
-
-        @Override
-        public List<Gif> searchGif (String gifName){
-            List<Gif> neededGifs = new ArrayList<>();
-            for (Gif gif : gifs) {
-                if (gif.getName().contains(gifName)) {
-                    neededGifs.add(gif);
-                }
-            }
-            return neededGifs;
-        }
+    @Override
+    public List<Gif> findAll() {
+        return gifs;
     }
+
+    @Override
+    public List<Gif> favorites() {
+        List<Gif> favGifs = new ArrayList<>();
+
+        for (int i = 0; i < gifs.size(); i++) {
+            if (gifs.get(i).isFavorite()) {
+                favGifs.add(gifs.get(i));
+            }
+        }
+        return favGifs;
+    }
+
+    @Override
+    public List<Gif> searchGif(String gifName) {
+        List<Gif> neededGifs = new ArrayList<>();
+        for (Gif gif : gifs) {
+            if (gif.getName().contains(gifName)) {
+                neededGifs.add(gif);
+            }
+        }
+        return neededGifs;
+    }
+
+    @Override
+    public List<Gif> categoryGifs(int id) {
+        List<Gif> categoryGifs = new ArrayList<>();
+        for(Gif gif:gifs){
+            if(gif.getCategory().getId() == id){
+                categoryGifs.add(gif);
+            }
+        }
+        return categoryGifs;
+    }
+}
 

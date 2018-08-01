@@ -15,5 +15,7 @@ public interface GifDao {
 
     public Gif findById(int id);
 
+    public List<Gif> categoryGifs(int i);
+
 }
 

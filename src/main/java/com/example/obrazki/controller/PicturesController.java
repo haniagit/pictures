@@ -53,7 +53,7 @@ public class PicturesController {
 
     @GetMapping("/category/{id}")
     public String getGifsByCategory(@PathVariable Integer id, ModelMap modelMap){
-        modelMap.put("gifs", gifDao.findById(id));
+        modelMap.put("gifs", gifDao.categoryGifs(id));
         modelMap.put("category", categoryDao.findCatById(id));
         return "category";
     }
