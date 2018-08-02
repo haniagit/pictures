@@ -3,12 +3,4 @@ $(document).ready(function () {
         alert("The image was clicked.");
     });
 
-    $(function() {
-        $('.allowCopy').click(function() {
-            $(this).focus();
-            $(this).select();
-            document.execCommand('copy');
-        });
-    });
-
 });

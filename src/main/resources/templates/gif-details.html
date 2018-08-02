@@ -40,8 +40,8 @@
             </div>
             <div class="col s12 l6">
                 <div class="share">
-                    <button class="btn right" href="#">Copy</button>
-                    <span th:text="'http://gif.fy/' + ${gif.name}">URL</span>
+                    <span input id="copy-me" th:text="'http://gif.fy/' + ${gif.name}">URL</span>
+                    <button type="text" class="btn right" data-clipboard-target="#copy-me">Copy</button>
                 </div>
             </div>
         </div>
