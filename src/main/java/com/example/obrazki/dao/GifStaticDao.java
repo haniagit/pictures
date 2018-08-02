@@ -70,5 +70,15 @@ public class GifStaticDao implements GifDao {
         }
         return categoryGifs;
     }
+
+    @Override
+    public void toggleGif(int id) {
+        Gif gif = findById(id);
+        if ( gif.isFavorite()){
+            gif.setFavorite(false);
+        } else {
+            gif.setFavorite(true);
+        }
+    }
 }
 

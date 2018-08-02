@@ -8,4 +8,12 @@ $(document).ready(function () {
             $(this).addClass('mark favorite');
         }
     });
-})
+
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/api/gif",
+        data: {id:  $('#details').attr("gif-id")}
+    }).then(function(data) {
+
+    });
+});

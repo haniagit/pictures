@@ -17,5 +17,7 @@ public interface GifDao {
 
     public List<Gif> categoryGifs(int i);
 
+    public void toggleGif(int id);
+
 }
 
